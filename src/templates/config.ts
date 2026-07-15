@@ -123,11 +123,11 @@ export const TEMPLATES: TemplateConfig[] = [
   },
   {
     id: 'instagram-feed',
-    name: 'Instagram Feed (Square)',
+    name: 'Instagram Feed (Portrait 4:5)',
     category: 'Instagram',
     width: 1080,
-    height: 1440,
-    aspectRatio: '3:4',
+    height: 1350,
+    aspectRatio: '4:5',
     fields: [
       { key: 'avatar', label: 'User Avatar', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80' },
       { key: 'username', label: 'Username', type: 'text', defaultValue: 'sara_creative', maxLength: 30 },
@@ -138,14 +138,14 @@ export const TEMPLATES: TemplateConfig[] = [
       { key: 'timeAgo', label: 'Time Ago', type: 'text', defaultValue: '4 HOURS AGO' }
     ],
     layers: [
-      { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 1080, height: 1440 },
+      { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 1080, height: 1350 },
       { id: 'user-avatar', type: 'image', fieldKey: 'avatar', x: 36, y: 28, width: 64, height: 64, borderRadius: 32 },
       { id: 'user-username', type: 'text', fieldKey: 'username', x: 120, y: 34, width: 600, height: 28, fontSize: 24, fontWeight: 600, color: '#262626', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif', maxLines: 1 },
       { id: 'post-location', type: 'text', fieldKey: 'location', x: 120, y: 64, width: 600, height: 22, fontSize: 18, color: '#4d4d4d', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif', maxLines: 1 },
-      { id: 'post-image', type: 'image', fieldKey: 'postImage', x: 0, y: 120, width: 1080, height: 900, objectFit: 'cover' },
-      { id: 'post-likes', type: 'text', fieldKey: 'likes', x: 36, y: 1120, width: 500, height: 28, fontSize: 22, fontWeight: 600, color: '#262626', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif', maxLines: 1 },
-      { id: 'post-caption', type: 'text', fieldKey: 'caption', x: 36, y: 1162, width: 1008, height: 80, fontSize: 20, color: '#262626', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif', maxLines: 3, lineHeight: 26 },
-      { id: 'post-time', type: 'text', fieldKey: 'timeAgo', x: 36, y: 1390, width: 500, height: 22, fontSize: 15, fontWeight: 500, color: '#8e8e8e', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif', maxLines: 1, letterSpacing: '0.2px' }
+      { id: 'post-image', type: 'image', fieldKey: 'postImage', x: 0, y: 120, width: 1080, height: 800, objectFit: 'cover' },
+      { id: 'post-likes', type: 'text', fieldKey: 'likes', x: 36, y: 1020, width: 500, height: 28, fontSize: 22, fontWeight: 600, color: '#262626', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif', maxLines: 1 },
+      { id: 'post-caption', type: 'text', fieldKey: 'caption', x: 36, y: 1062, width: 1008, height: 80, fontSize: 20, color: '#262626', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif', maxLines: 3, lineHeight: 26 },
+      { id: 'post-time', type: 'text', fieldKey: 'timeAgo', x: 36, y: 1160, width: 500, height: 22, fontSize: 15, fontWeight: 500, color: '#8e8e8e', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif', maxLines: 1, letterSpacing: '0.2px' }
     ]
   },
   {

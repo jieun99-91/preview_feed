@@ -4,8 +4,8 @@ export const InstagramFeedMockup: React.FC = () => {
   return (
     <svg
       width="1080"
-      height="1440"
-      viewBox="0 0 1080 1440"
+      height="1350"
+      viewBox="0 0 1080 1350"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ pointerEvents: 'none', userSelect: 'none', background: '#ffffff' }}
@@ -24,11 +24,11 @@ export const InstagramFeedMockup: React.FC = () => {
 
 
       {/* --- COMPONENT GAP FOR MAIN POST IMAGE --- */}
-      {/* (y: 120 to y: 1020 is the 1080x900 post image) */}
+      {/* (y: 120 to y: 920 is the 1080x800 post image) */}
 
 
       {/* --- ACTION TRAY (HEART, COMMENT, SEND, BOOKMARK) --- */}
-      <g transform="translate(0, 1020)">
+      <g transform="translate(0, 920)">
         <rect width="1080" height="80" fill="#ffffff" />
         
         {/* Heart Icon (Like) */}
@@ -46,7 +46,7 @@ export const InstagramFeedMockup: React.FC = () => {
 
 
       {/* --- COMMENTS INPUT BOX (SKELETON) --- */}
-      <g transform="translate(0, 1330)">
+      <g transform="translate(0, 1240)">
         <line x1="36" y1="0" x2="1044" y2="0" stroke="#efefef" strokeWidth="1.5" />
         
         <circle cx="68" cy="50" r="24" fill="#f0f0f0" />
