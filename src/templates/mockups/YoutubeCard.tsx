@@ -14,7 +14,7 @@ export const YoutubeCardMockup: React.FC = () => {
       <rect width="1400" height="1127" fill="#ffffff" />
 
       {/* Placeholder Outline for Thumbnail */}
-      <rect x="67" y="70" width="1266" height="731" rx="12" fill="#f8f9fa" stroke="#e9ecef" strokeWidth="2" />
+      <rect x="67" y="70" width="1266" height="712" rx="12" fill="#f8f9fa" stroke="#e9ecef" strokeWidth="2" />
 
       {/* Profile Avatar Placeholder Outline */}
       <circle cx="110" cy="868" r="43" fill="#e9ecef" />

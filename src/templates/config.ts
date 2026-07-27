@@ -58,7 +58,7 @@ export const TEMPLATES: TemplateConfig[] = [
     ],
     layers: [
       { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 1400, height: 1127 },
-      { id: 'video-thumbnail', type: 'image', fieldKey: 'thumbnail', x: 67, y: 70, width: 1266, height: 731, borderRadius: 12, objectFit: 'cover' },
+      { id: 'video-thumbnail', type: 'image', fieldKey: 'thumbnail', x: 67, y: 70, width: 1266, height: 712, borderRadius: 12, objectFit: 'cover' },
       { id: 'channel-avatar', type: 'image', fieldKey: 'avatar', x: 67, y: 825, width: 86, height: 86, borderRadius: 43 },
       { id: 'video-title', type: 'text', fieldKey: 'title', x: 179, y: 825, width: 1119, height: 112, fontSize: 37, fontWeight: 700, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 2, lineHeight: 50 },
       { id: 'channel-name', type: 'text', fieldKey: 'channel', x: 178.5, y: 937, width: 1120, height: 60, fontSize: 32, fontWeight: 500, color: '#606060', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 1 },

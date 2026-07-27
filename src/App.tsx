@@ -5,7 +5,7 @@ import Sidebar from './components/Editor/Sidebar';
 import Canvas from './components/Editor/Canvas';
 import { toPng } from 'html-to-image';
 import { jsPDF } from 'jspdf';
-import { LayoutGrid, Sun, Moon, Info, HelpCircle, Download, FileText, ZoomIn, ZoomOut } from 'lucide-react';
+import { LayoutGrid, Info, HelpCircle, Download, FileText, ZoomIn, ZoomOut } from 'lucide-react';
 
 export const App: React.FC = () => {
   // 1. SELECT TEMPLATE STATE
@@ -39,7 +39,6 @@ export const App: React.FC = () => {
 
   // 5. EXPORT & INTERFACE STATES
   const [isExporting, setIsExporting] = useState<boolean>(false);
-  const [editorTheme, setEditorTheme] = useState<'light' | 'dark'>('light');
   const [showGuide, setShowGuide] = useState<boolean>(true);
 
   // Reset visibility set and clear selection on template change
@@ -157,7 +156,7 @@ export const App: React.FC = () => {
   };
     
   return (
-    <div className={`editor-app-wrapper theme-${editorTheme}`}>
+    <div className="editor-app-wrapper theme-light">
       {/* --- TOP BAR NAVIGATION --- */}
       <header className="editor-topbar">
         <div className="topbar-left">
@@ -208,16 +207,6 @@ export const App: React.FC = () => {
             title="이용 가이드"
           >
             <HelpCircle size={18} />
-          </button>
-
-          {/* Theme toggle */}
-          <button 
-            type="button" 
-            className="topbar-action-btn"
-            onClick={() => setEditorTheme(editorTheme === 'light' ? 'dark' : 'light')}
-            title="Toggle Theme"
-          >
-            {editorTheme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
           </button>
         </div>
       </header>
