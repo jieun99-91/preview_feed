@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import type { TemplateConfig } from '../../templates';
 import iconInstaPng from '../../assets/icon-insta.png';
 import iconStoryPng from '../../assets/icon-story.png';
+import instaMoGuidePng from '../../assets/insta_mo-guide.png';
 
 interface CanvasProps {
   template: TemplateConfig;
@@ -12,6 +13,7 @@ interface CanvasProps {
   visibleLayerIds: Set<string>;
   hoveredLayerId: string | null;
   setHoveredLayerId: (layerId: string | null) => void;
+  showCropGuide?: boolean;
 }
 
 export const Canvas: React.FC<CanvasProps> = ({
@@ -23,6 +25,7 @@ export const Canvas: React.FC<CanvasProps> = ({
   visibleLayerIds,
   hoveredLayerId,
   setHoveredLayerId,
+  showCropGuide,
 }) => {
   const canvasRef = useRef<HTMLDivElement>(null);
 
@@ -255,11 +258,28 @@ export const Canvas: React.FC<CanvasProps> = ({
 
             {/* Post Main image (590x738) */}
             {renderLayerWrapper('post-image', (
-              <img 
-                src={postImageVal} 
-                style={{ width: '590px', height: '738px', objectFit: 'cover', display: 'block' }} 
-                alt="Post" 
-              />
+              <div style={{ position: 'relative', width: '590px', height: '738px' }}>
+                <img 
+                  src={postImageVal} 
+                  style={{ width: '590px', height: '738px', objectFit: 'cover', display: 'block' }} 
+                  alt="Post" 
+                />
+                {showCropGuide && (
+                  <img 
+                    src={instaMoGuidePng} 
+                    style={{
+                      position: 'absolute',
+                      left: '17px',
+                      top: '0px',
+                      width: '556px',
+                      height: '738px',
+                      pointerEvents: 'none',
+                      zIndex: 13,
+                    }}
+                    alt="3:4 Crop Guide"
+                  />
+                )}
+              </div>
             ), { width: '590px', height: '738px' })}
 
             {/* Mockup icons bar image loaded directly from assets */}

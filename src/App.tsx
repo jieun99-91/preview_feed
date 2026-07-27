@@ -40,6 +40,7 @@ export const App: React.FC = () => {
   // 5. EXPORT & INTERFACE STATES
   const [isExporting, setIsExporting] = useState<boolean>(false);
   const [showGuide, setShowGuide] = useState<boolean>(true);
+  const [showCropGuide, setShowCropGuide] = useState<boolean>(false);
 
   // Reset visibility set and clear selection on template change
   useEffect(() => {
@@ -225,6 +226,8 @@ export const App: React.FC = () => {
           onChangeField={handleChangeField}
           selectedLayerId={selectedLayerId}
           templateLayers={selectedTemplate.layers}
+          showCropGuide={showCropGuide}
+          onToggleCropGuide={() => setShowCropGuide(!showCropGuide)}
         />
 
         {/* CENTER VIEWPORT PREVIEW CANVAS */}
@@ -250,6 +253,7 @@ export const App: React.FC = () => {
             visibleLayerIds={visibleLayerIds}
             hoveredLayerId={hoveredLayerId}
             setHoveredLayerId={setHoveredLayerId}
+            showCropGuide={showCropGuide}
           />
 
           {/* Floating Canvas Zoom Controls */}

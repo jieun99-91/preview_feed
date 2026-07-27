@@ -11,6 +11,8 @@ interface SidebarProps {
   onChangeField: (key: string, value: string) => void;
   selectedLayerId: string | null;
   templateLayers: any[];
+  showCropGuide?: boolean;
+  onToggleCropGuide?: () => void;
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -20,6 +22,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onChangeField,
   selectedLayerId,
   templateLayers,
+  showCropGuide,
+  onToggleCropGuide,
 }) => {
   // Find which field matches the selected layer (if any)
   const activeFieldKey = React.useMemo(() => {
@@ -82,11 +86,26 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 id={`field-container-${field.key}`}
               >
                 {field.type === 'image' ? (
-                  <FileUpload
-                    label={field.label}
-                    value={currentValue}
-                    onChange={(val) => onChangeField(field.key, val)}
-                  />
+                  <>
+                    <FileUpload
+                      label={field.label}
+                      value={currentValue}
+                      onChange={(val) => onChangeField(field.key, val)}
+                    />
+                    {selectedTemplate.id === 'insta-mo' && field.key === 'postImage' && (
+                      <div className="crop-guide-toggle-row" style={{ marginTop: '10px', padding: '6px 8px', backgroundColor: 'var(--badge-bg)', borderRadius: '6px' }}>
+                        <label style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '11px', fontWeight: 600, color: 'var(--text-secondary)', cursor: 'pointer', width: '100%' }}>
+                          <input 
+                            type="checkbox" 
+                            checked={showCropGuide || false} 
+                            onChange={onToggleCropGuide} 
+                            style={{ width: '14px', height: '14px', accentColor: 'var(--accent-color)', cursor: 'pointer', margin: 0 }}
+                          />
+                          <span>3:4 비율 자름선 표시 (안내선 표시)</span>
+                        </label>
+                      </div>
+                    )}
+                  </>
                 ) : (
                   <div className="text-field-container">
                     <div className="input-header">
