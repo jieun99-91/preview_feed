@@ -82,7 +82,7 @@ export const TEMPLATES: TemplateConfig[] = [
       { id: 'user-avatar', type: 'image', fieldKey: 'avatar', x: 15.5, y: 14, width: 48, height: 48, borderRadius: 24 },
       { id: 'user-username', type: 'text', fieldKey: 'username', x: 78.5, y: 24, width: 300, height: 30, fontSize: 21, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 1 },
       { id: 'post-image', type: 'image', fieldKey: 'postImage', x: 0, y: 78, width: 590, height: 738, objectFit: 'cover' },
-      { id: 'post-caption', type: 'text', fieldKey: 'caption', x: 19, y: 950, width: 552, height: 168, fontSize: 20, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 5, lineHeight: 28 }
+      { id: 'post-caption', type: 'text', fieldKey: 'caption', x: 19, y: 920, width: 552, height: 168, fontSize: 20, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 5, lineHeight: 28 }
     ]
   },
   {
