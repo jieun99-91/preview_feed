@@ -18,6 +18,7 @@ export interface TemplateLayer {
   height: number;
   borderRadius?: number;
   objectFit?: 'cover' | 'contain';
+  zIndex?: number;   // Customize render order in canvas
   // Typography for text layers
   fontSize?: number;
   fontWeight?: string | number;
@@ -99,7 +100,7 @@ export const TEMPLATES: TemplateConfig[] = [
     ],
     layers: [
       { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 1080, height: 1960 },
-      { id: 'story-background', type: 'image', fieldKey: 'storyImage', x: 0, y: 0, width: 1080, height: 1960, objectFit: 'cover' },
+      { id: 'story-background', type: 'image', fieldKey: 'storyImage', x: 0, y: 0, width: 1080, height: 1960, objectFit: 'cover', zIndex: 1 },
       { id: 'story-avatar', type: 'image', fieldKey: 'avatar', x: 31, y: 79, width: 90, height: 90, borderRadius: 45 },
       { id: 'story-username', type: 'text', fieldKey: 'username', x: 149, y: 99, width: 600, height: 70, fontSize: 39.5, fontWeight: 400, color: '#ffffff', fontFamily: 'Pretendard, sans-serif', maxLines: 1 }
     ]

@@ -68,7 +68,7 @@ export const Canvas: React.FC<CanvasProps> = ({
               left: 0, 
               width: '100%', 
               height: '100%', 
-              zIndex: 1 
+              zIndex: 10 
             }}
           >
             {MockupBg ? <MockupBg /> : null}
@@ -98,7 +98,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                     top: layer.y,
                     width: layer.width,
                     height: layer.height,
-                    zIndex: 10,
+                    zIndex: layer.zIndex !== undefined ? layer.zIndex : 12,
                     borderRadius: layer.borderRadius || 0,
                     overflow: 'hidden',
                     cursor: 'pointer',
