@@ -106,6 +106,36 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       </div>
                     )}
                   </>
+                ) : field.type === 'select' ? (
+                  <div className="select-field-container">
+                    <label className="input-label" style={{ display: 'block', fontSize: '11px', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '6px' }}>{field.label}</label>
+                    <div className="segmented-control" style={{ display: 'flex', gap: '4px', padding: '4px', backgroundColor: 'var(--badge-bg)', borderRadius: '8px' }}>
+                      {field.options?.map((opt) => {
+                        const isSelected = currentValue === opt.value;
+                        return (
+                          <button
+                            key={opt.value}
+                            type="button"
+                            onClick={() => onChangeField(field.key, opt.value)}
+                            style={{
+                              flex: 1,
+                              border: 'none',
+                              padding: '8px 12px',
+                              borderRadius: '6px',
+                              fontSize: '11px',
+                              fontWeight: 600,
+                              cursor: 'pointer',
+                              backgroundColor: isSelected ? 'var(--accent-color)' : 'transparent',
+                              color: isSelected ? '#ffffff' : 'var(--text-secondary)',
+                              transition: 'all var(--transition-fast)',
+                            }}
+                          >
+                            {opt.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
                 ) : (
                   <div className="text-field-container">
                     <div className="input-header">

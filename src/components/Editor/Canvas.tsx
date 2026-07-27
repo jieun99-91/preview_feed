@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
 import type { TemplateConfig } from '../../templates';
-import iconInstaPng from '../../assets/icon-insta.png';
 import iconStoryPng from '../../assets/icon-story.png';
 import instaMoGuidePng from '../../assets/insta_mo-guide.png';
+import instaMoIconCarouselPng from '../../assets/insta-mo-icon-carousel.png';
+import instaMoIconSinglePng from '../../assets/insta-mo-icon-single.png';
 
 interface CanvasProps {
   template: TemplateConfig;
@@ -282,9 +283,9 @@ export const Canvas: React.FC<CanvasProps> = ({
               </div>
             ), { width: '590px', height: '738px' })}
 
-            {/* Mockup icons bar image loaded directly from assets */}
+            {/* Mockup icons bar image selected dynamically (carousel vs single) */}
             <img 
-              src={iconInstaPng} 
+              src={values['postType'] === 'carousel' ? instaMoIconCarouselPng : instaMoIconSinglePng} 
               style={{ width: '590px', height: '98px', display: 'block' }} 
               alt="Icons Bar" 
             />
