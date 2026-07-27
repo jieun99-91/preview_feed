@@ -135,6 +135,8 @@ export const Canvas: React.FC<CanvasProps> = ({
 
             // Render Text Layer
             if (layer.type === 'text') {
+              const isAutoHeight = layer.id === 'video-title' || layer.id === 'post-caption';
+
               const textStyle: React.CSSProperties = {
                 fontSize: layer.fontSize,
                 fontWeight: layer.fontWeight,
@@ -144,14 +146,14 @@ export const Canvas: React.FC<CanvasProps> = ({
                 lineHeight: layer.lineHeight ? `${layer.lineHeight}px` : 'normal',
                 letterSpacing: layer.letterSpacing || 'normal',
                 display: '-webkit-box',
-                WebkitLineClamp: layer.maxLines || 'none',
+                WebkitLineClamp: isAutoHeight ? 'none' : (layer.maxLines || 'none'),
                 WebkitBoxOrient: 'vertical',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
                 wordBreak: 'break-word',
                 whiteSpace: 'pre-wrap',
                 width: '100%',
-                height: '100%',
+                height: isAutoHeight ? 'auto' : '100%',
               };
 
               return (
@@ -163,7 +165,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                     left: layer.x,
                     top: layer.y,
                     width: layer.width,
-                    height: layer.height,
+                    height: isAutoHeight ? 'auto' : layer.height,
                     zIndex: 11,
                     display: 'flex',
                     flexDirection: 'column',
