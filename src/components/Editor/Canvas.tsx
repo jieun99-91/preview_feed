@@ -178,7 +178,16 @@ export const Canvas: React.FC<CanvasProps> = ({
                   }}
                 >
                   <div style={textStyle}>
-                    {value || <span style={{ opacity: 0.4 }}>{layer.fieldKey}</span>}
+                    {layer.id === 'post-caption' ? (
+                      <>
+                        <span style={{ fontWeight: 700, marginRight: '6px' }}>
+                          {values['username'] || ''}
+                        </span>
+                        <span>{value}</span>
+                      </>
+                    ) : (
+                      value || <span style={{ opacity: 0.4 }}>{layer.fieldKey}</span>
+                    )}
                   </div>
                   {/* Visual Outline Overlays */}
                   <div className="layer-outline-visual" />

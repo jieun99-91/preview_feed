@@ -76,7 +76,7 @@ export const TEMPLATES: TemplateConfig[] = [
       { key: 'avatar', label: '사용자 프로필 이미지', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80', placeholder: '프로필 이미지를 업로드해 주세요' },
       { key: 'username', label: '사용자 아이디 (계정명)', type: 'text', defaultValue: 'hyundaiwia_official', placeholder: '사용자 계정명을 입력해 주세요', maxLength: 30 },
       { key: 'postImage', label: '피드 메인 이미지', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80', placeholder: '게시물 메인 이미지를 업로드해 주세요' },
-      { key: 'caption', label: '피드 본문 텍스트', type: 'text', defaultValue: 'hyundaiwia_official 현대위아 멘토링 우수팀이ㅇㅇㅇㅇㅇㅇㅇㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ', placeholder: '피드 본문 내용을 입력해 주세요', maxLength: 350, multiline: true }
+      { key: 'caption', label: '피드 본문 텍스트', type: 'text', defaultValue: '현대위아 멘토링 우수팀이ㅇㅇㅇㅇㅇㅇㅇㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ', placeholder: '피드 본문 내용을 입력해 주세요', maxLength: 350, multiline: true }
     ],
     layers: [
       { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 590, height: 1214 },
