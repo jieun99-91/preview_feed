@@ -76,12 +76,14 @@ export const App: React.FC = () => {
       setSelectedLayerId(null);
       setHoveredLayerId(null);
 
+      const actualHeight = node.offsetHeight;
+
       // Trigger html-to-image capture
       toPng(node, {
         cacheBust: true,
         pixelRatio: 2, // Double resolution for super crisp print/retina results
         width: selectedTemplate.width,
-        height: selectedTemplate.height,
+        height: actualHeight,
         style: {
           transform: 'none',
           transformOrigin: 'top left',
@@ -119,27 +121,29 @@ export const App: React.FC = () => {
       setSelectedLayerId(null);
       setHoveredLayerId(null);
 
+      const actualHeight = node.offsetHeight;
+
       // Trigger html-to-image capture
       toPng(node, {
         cacheBust: true,
         pixelRatio: 2, // Double resolution for super crisp print/retina results
         width: selectedTemplate.width,
-        height: selectedTemplate.height,
+        height: actualHeight,
         style: {
           transform: 'none',
           transformOrigin: 'top left',
         },
       })
         .then((dataUrl) => {
-          const orientation = selectedTemplate.width > selectedTemplate.height ? 'l' : 'p';
+          const orientation = selectedTemplate.width > actualHeight ? 'l' : 'p';
           
           const pdf = new jsPDF({
             orientation: orientation,
             unit: 'px',
-            format: [selectedTemplate.width, selectedTemplate.height],
+            format: [selectedTemplate.width, actualHeight],
           });
 
-          pdf.addImage(dataUrl, 'PNG', 0, 0, selectedTemplate.width, selectedTemplate.height);
+          pdf.addImage(dataUrl, 'PNG', 0, 0, selectedTemplate.width, actualHeight);
           pdf.save(`${selectedTemplate.id}-preview.pdf`);
 
           setIsExporting(false);
