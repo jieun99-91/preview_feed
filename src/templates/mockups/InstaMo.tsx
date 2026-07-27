@@ -26,19 +26,35 @@ export const InstaMoMockup: React.FC = () => {
       {/* Main Post Image Placeholder */}
       <rect x="0" y="78" width="590" height="738" fill="#f8f9fa" />
 
+      {/* --- CAROUSEL DOTS (Centered horizontally at y: 832) --- */}
+      <g transform="translate(295, 832)" fill="#dbdbdb">
+        <circle cx="-18" cy="0" r="4.5" fill="#0095f6" />
+        <circle cx="-6" cy="0" r="4.5" />
+        <circle cx="6" cy="0" r="4.5" />
+        <circle cx="18" cy="0" r="4.5" />
+      </g>
+
       {/* --- ACTION TRAY (y: 816 to y: 914) --- */}
       <g transform="translate(19, 816)">
         {/* Heart Icon (Like) */}
-        <path d="M24 16c-3.3-3.3-8.7-3.3-12 0s-3.3 8.7 0 12l12 12 12-12c3.3-3.3 3.3-8.7 0-12s-8.7-3.3-12 0z" stroke="#262626" strokeWidth="3" strokeLinejoin="round" fill="none" transform="translate(0, 10)" />
+        <path d="M24 16c-3.3-3.3-8.7-3.3-12 0s-3.3 8.7 0 12l12 12 12-12c3.3-3.3 3.3-8.7 0-12s-8.7-3.3-12 0z" stroke="#262626" strokeWidth="3" strokeLinejoin="round" fill="none" transform="translate(0, 22)" />
+
+        {/* Repost Icon (Loop Arrows between Heart and Comment) */}
+        <g stroke="#262626" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" transform="translate(80, 22)">
+          <path d="M16 1l4 4-4 4" />
+          <path d="M4 11V9a3 3 0 0 1 3-3h13" />
+          <path d="M6 21l-4-4 4-4" />
+          <path d="M18 11v2a3 3 0 0 1-3 3H2" />
+        </g>
 
         {/* Comment Icon */}
-        <path d="M12 8c0-5 4-9 9-9s9 4 9 9c0 3-2 6-5 8l-1 4-4-2c-5 0-8-5-8-10z" stroke="#262626" strokeWidth="3" strokeLinejoin="round" fill="none" transform="translate(32, 12)" />
+        <path d="M12 8c0-5 4-9 9-9s9 4 9 9c0 3-2 6-5 8l-1 4-4-2c-5 0-8-5-8-10z" stroke="#262626" strokeWidth="3" strokeLinejoin="round" fill="none" transform="translate(125, 22)" />
 
         {/* Share Icon */}
-        <path d="M22 2L2 14l10 3 3 10 7-25z" stroke="#262626" strokeWidth="3" strokeLinejoin="round" fill="none" transform="translate(68, 12)" />
+        <path d="M22 2L2 14l10 3 3 10 7-25z" stroke="#262626" strokeWidth="3" strokeLinejoin="round" fill="none" transform="translate(165, 22)" />
 
         {/* Bookmark Icon (Far Right) */}
-        <path d="M532 14v28l-10-8-10 8V14c0-1.5 1-2.5 2.5-2.5h15c1.5 0 2.5 1 2.5 2.5z" stroke="#262626" strokeWidth="3" strokeLinejoin="round" fill="none" transform="translate(0, 8)" />
+        <path d="M532 14v28l-10-8-10 8V14c0-1.5 1-2.5 2.5-2.5h15c1.5 0 2.5 1 2.5 2.5z" stroke="#262626" strokeWidth="3" strokeLinejoin="round" fill="none" transform="translate(0, 20)" />
       </g>
     </svg>
   );
