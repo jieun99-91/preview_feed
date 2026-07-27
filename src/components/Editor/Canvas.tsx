@@ -286,7 +286,7 @@ export const Canvas: React.FC<CanvasProps> = ({
             {/* Mockup icons bar image selected dynamically (carousel vs single) */}
             <img 
               src={values['postType'] === 'carousel' ? instaMoIconCarouselPng : instaMoIconSinglePng} 
-              style={{ width: '590px', height: '98px', display: 'block' }} 
+              style={{ width: '590px', height: values['postType'] === 'carousel' ? '98px' : '61px', display: 'block' }} 
               alt="Icons Bar" 
             />
 
