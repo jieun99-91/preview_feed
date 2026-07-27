@@ -40,7 +40,7 @@ export const App: React.FC = () => {
 
   // 5. EXPORT & INTERFACE STATES
   const [isExporting, setIsExporting] = useState<boolean>(false);
-  const [editorTheme, setEditorTheme] = useState<'light' | 'dark'>('dark');
+  const [editorTheme, setEditorTheme] = useState<'light' | 'dark'>('light');
   const [showGuide, setShowGuide] = useState<boolean>(true);
 
   // Reset visibility set and clear selection on template change

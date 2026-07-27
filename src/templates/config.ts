@@ -75,8 +75,6 @@ export const TEMPLATES: TemplateConfig[] = [
       { key: 'avatar', label: '사용자 프로필 이미지', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80', placeholder: '프로필 이미지를 업로드해 주세요' },
       { key: 'username', label: '사용자 아이디 (계정명)', type: 'text', defaultValue: 'hyundaiwia_official', placeholder: '사용자 계정명을 입력해 주세요', maxLength: 30 },
       { key: 'postImage', label: '피드 메인 이미지', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80', placeholder: '게시물 메인 이미지를 업로드해 주세요' },
-      { key: 'likesCount', label: '하트 옆 좋아요 수', type: 'text', defaultValue: '7', placeholder: '예: 7' },
-      { key: 'likes', label: '좋아요 문구', type: 'text', defaultValue: 'ju0_e님 외 여러 명이 좋아합니다', placeholder: '예: ju0_e님 외 여러 명이 좋아합니다' },
       { key: 'caption', label: '피드 본문 텍스트', type: 'text', defaultValue: 'hyundaiwia_official 현대위아 멘토링 우수팀이ㅇㅇㅇㅇㅇㅇㅇㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ', placeholder: '피드 본문 내용을 입력해 주세요', maxLength: 350, multiline: true }
     ],
     layers: [
@@ -84,8 +82,6 @@ export const TEMPLATES: TemplateConfig[] = [
       { id: 'user-avatar', type: 'image', fieldKey: 'avatar', x: 15.5, y: 14, width: 48, height: 48, borderRadius: 24 },
       { id: 'user-username', type: 'text', fieldKey: 'username', x: 78.5, y: 24, width: 300, height: 30, fontSize: 21, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 1 },
       { id: 'post-image', type: 'image', fieldKey: 'postImage', x: 0, y: 78, width: 590, height: 738, objectFit: 'cover' },
-      { id: 'post-likes-count', type: 'text', fieldKey: 'likesCount', x: 50, y: 852, width: 30, height: 24, fontSize: 18, fontWeight: 600, color: '#262626', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 1 },
-      { id: 'post-likes', type: 'text', fieldKey: 'likes', x: 51, y: 915.5, width: 500, height: 24, fontSize: 20, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 1 },
       { id: 'post-caption', type: 'text', fieldKey: 'caption', x: 19, y: 950, width: 552, height: 168, fontSize: 20, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 5, lineHeight: 28 }
     ]
   },
