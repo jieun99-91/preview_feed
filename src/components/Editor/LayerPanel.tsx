@@ -46,7 +46,7 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
       {/* --- EXPORT PANEL ACTIONS --- */}
       <div className="sidebar-header">
         <Download size={18} className="sidebar-header-icon" />
-        <h2>Export Panel</h2>
+        <h2>파일 추출 및 저장</h2>
       </div>
 
       <div className="sidebar-content-padding">
@@ -58,7 +58,7 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
             disabled={isExporting}
           >
             <Download size={16} />
-            <span>{isExporting ? 'Exporting PNG...' : 'Download PNG'}</span>
+            <span>{isExporting ? 'PNG 내보내는 중...' : 'PNG 이미지 다운로드'}</span>
           </button>
           
           <button 
@@ -68,21 +68,21 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
             disabled={isExporting}
           >
             <FileText size={16} />
-            <span>{isExporting ? 'Exporting PDF...' : 'Download PDF'}</span>
+            <span>{isExporting ? 'PDF 내보내는 중...' : 'PDF 문서 다운로드'}</span>
           </button>
         </div>
 
         <div className="sidebar-divider" style={{ margin: '16px 0' }} />
 
         {/* --- ZOOM CONTROLS --- */}
-        <h3 className="section-title">Canvas Zoom</h3>
+        <h3 className="section-title">캔버스 배율 (확대/축소)</h3>
         <div className="zoom-control-section">
           <div className="zoom-row">
             <button 
               type="button" 
               className="zoom-btn" 
               onClick={() => onZoomChange(Math.max(0.1, zoom - 0.1))}
-              title="Zoom Out"
+              title="축소"
             >
               <ZoomOut size={16} />
             </button>
@@ -91,7 +91,7 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
               type="button" 
               className="zoom-btn" 
               onClick={() => onZoomChange(Math.min(3, zoom + 0.1))}
-              title="Zoom In"
+              title="확대"
             >
               <ZoomIn size={16} />
             </button>
@@ -99,7 +99,7 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
           <div className="zoom-presets-row">
             <button type="button" className="preset-btn" onClick={() => handleZoomPreset(0.5)}>50%</button>
             <button type="button" className="preset-btn" onClick={() => handleZoomPreset(1.0)}>100%</button>
-            <button type="button" className="preset-btn" onClick={handleZoomFit}>Auto Fit</button>
+            <button type="button" className="preset-btn" onClick={handleZoomFit}>자동 맞춤</button>
           </div>
         </div>
 
@@ -107,8 +107,8 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
 
         {/* --- LAYERS LIST --- */}
         <div className="layers-header-row">
-          <h3 className="section-title" style={{ margin: 0 }}>Layers</h3>
-          <span className="layers-count">{template.layers.length} items</span>
+          <h3 className="section-title" style={{ margin: 0 }}>레이어 리스트</h3>
+          <span className="layers-count">{template.layers.length}개 항목</span>
         </div>
 
         <div className="layers-list-container">
@@ -123,7 +123,7 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
 
             // Generate label
             const layerLabel = layer.type === 'mockup' 
-              ? 'Background Mockup' 
+              ? '피그마 배경 목업' 
               : `${layer.fieldKey || layer.id}`;
 
             return (
@@ -149,7 +149,7 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
                     e.stopPropagation();
                     onToggleLayerVisibility(layer.id);
                   }}
-                  title={isVisible ? 'Hide layer' : 'Show layer'}
+                  title={isVisible ? '레이어 숨기기' : '레이어 보이기'}
                 >
                   {isVisible ? <Eye size={14} /> : <EyeOff size={14} />}
                 </button>

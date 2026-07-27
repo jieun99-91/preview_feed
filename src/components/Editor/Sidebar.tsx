@@ -32,13 +32,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
     <aside className="editor-sidebar-left">
       <div className="sidebar-header">
         <Layers size={18} className="sidebar-header-icon" />
-        <h2>Properties Panel</h2>
+        <h2>옵션 설정 패널</h2>
       </div>
 
       <div className="sidebar-content">
         {/* Template Selector Section */}
         <div className="property-group">
-          <label className="input-label">Select Template</label>
+          <label className="input-label">템플릿 선택</label>
           <div className="template-select-wrapper">
             <select
               value={selectedTemplate.id}
@@ -48,14 +48,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
               }}
               className="template-dropdown"
             >
-              <optgroup label="YouTube Templates">
+              <optgroup label="유튜브 템플릿">
                 {TEMPLATES.filter((t) => t.category === 'YouTube').map((t) => (
                   <option key={t.id} value={t.id}>
                     {t.name}
                   </option>
                 ))}
               </optgroup>
-              <optgroup label="Instagram Templates">
+              <optgroup label="인스타그램 템플릿">
                 {TEMPLATES.filter((t) => t.category === 'Instagram').map((t) => (
                   <option key={t.id} value={t.id}>
                     {t.name}
@@ -70,7 +70,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Dynamic Inputs Form */}
         <div className="inputs-section">
-          <h3 className="section-title">Content Settings</h3>
+          <h3 className="section-title">콘텐츠 입력</h3>
           {selectedTemplate.fields.map((field) => {
             const isFieldActive = activeFieldKey === field.key;
             const currentValue = values[field.key] || '';

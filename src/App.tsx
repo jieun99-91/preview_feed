@@ -176,11 +176,11 @@ export const App: React.FC = () => {
         <div className="topbar-left">
           <div className="logo-group">
             <LayoutGrid className="logo-icon" size={20} />
-            <h1>Social Preview <span className="logo-badge">MVP</span></h1>
+            <h1>소셜 프리뷰 에디터 <span className="logo-badge">MVP</span></h1>
           </div>
           <div className="topbar-divider" />
           <div className="topbar-template-info">
-            <span className="info-label">Active:</span>
+            <span className="info-label">선택된 템플릿:</span>
             <span className="info-value">{selectedTemplate.name}</span>
             <span className="dimension-badge">
               {selectedTemplate.width} × {selectedTemplate.height}px ({selectedTemplate.aspectRatio})
@@ -194,7 +194,7 @@ export const App: React.FC = () => {
             type="button" 
             className={`topbar-action-btn ${showGuide ? 'btn-active' : ''}`}
             onClick={() => setShowGuide(!showGuide)}
-            title="Help / Guidelines"
+            title="이용 가이드"
           >
             <HelpCircle size={18} />
           </button>
@@ -231,7 +231,7 @@ export const App: React.FC = () => {
               <div className="guide-content">
                 <Info size={16} className="guide-info-icon" />
                 <p>
-                  <strong>Figma Style Composition Editor:</strong> Hover over any item in the preview canvas to see its bounds. Click on it to select it and focus its input property. Drag & drop images or edit texts to preview in real-time. Use the right sidebar to hide layers or export as a high-definition PNG.
+                  <strong>소셜 프리뷰 에디터 이용 가이드:</strong> 우측 캔버스의 요소 위에 마우스를 올리면 파란색 테두리가 표시되며, 클릭하면 해당 입력 폼으로 즉시 이동합니다. 이미지 업로드 또는 텍스트 수정을 통해 실시간 프리뷰를 확인하고 고해상도 PNG/PDF 파일로 다운로드해 보세요.
                 </p>
               </div>
             </div>

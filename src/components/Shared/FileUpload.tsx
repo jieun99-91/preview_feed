@@ -78,10 +78,10 @@ export const FileUpload: React.FC<FileUploadProps> = ({
           <div className="preview-overlay">
             <div className="preview-overlay-content">
               <Upload size={16} />
-              <span>Replace Image</span>
+              <span>이미지 교체하기</span>
             </div>
           </div>
-          <button type="button" className="remove-image-btn" onClick={removeImage} title="Remove image">
+          <button type="button" className="remove-image-btn" onClick={removeImage} title="이미지 삭제">
             <X size={14} />
           </button>
         </div>
@@ -97,8 +97,8 @@ export const FileUpload: React.FC<FileUploadProps> = ({
             <div className="upload-icon-wrapper">
               <Upload size={20} className="upload-icon" />
             </div>
-            <p className="upload-text-primary">Click or drag image to upload</p>
-            <p className="upload-text-secondary">PNG, JPG, SVG, WebP up to 10MB</p>
+            <p className="upload-text-primary">클릭하거나 이미지를 드래그하여 업로드</p>
+            <p className="upload-text-secondary">PNG, JPG, SVG, WebP 최대 10MB</p>
           </div>
         </div>
       )}

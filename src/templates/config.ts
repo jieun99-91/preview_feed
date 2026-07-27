@@ -43,17 +43,17 @@ export interface TemplateConfig {
 export const TEMPLATES: TemplateConfig[] = [
   {
     id: 'youtube-card',
-    name: 'YouTube Card (Figma)',
+    name: '유튜브 피드 카드 (YouTubeCard)',
     category: 'YouTube',
     width: 1400,
     height: 1127,
     aspectRatio: '1400:1127',
     fields: [
-      { key: 'thumbnail', label: 'Video Thumbnail', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80', placeholder: 'Upload thumbnail image' },
-      { key: 'avatar', label: 'Channel Avatar', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80', placeholder: 'Upload channel profile' },
-      { key: 'title', label: 'Video Title', type: 'text', defaultValue: '[심야괴담회] 건드리지 말아야 할 것을 건드렸다... 한번의 소리가 바꿔버린운명 #심야괴담회', placeholder: 'Enter video title', maxLength: 120, multiline: true },
-      { key: 'channel', label: 'Channel Name', type: 'text', defaultValue: '채널 명', placeholder: 'Enter channel name', maxLength: 50 },
-      { key: 'views', label: 'Views & Time Info', type: 'text', defaultValue: '조회수 5.3천회 · 1시간 전', placeholder: 'e.g. 조회수 5.3천회 · 1시간 전' }
+      { key: 'thumbnail', label: '비디오 썸네일 이미지', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80', placeholder: '썸네일 이미지를 업로드해 주세요' },
+      { key: 'avatar', label: '채널 프로필 이미지', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80', placeholder: '채널 프로필 이미지를 업로드해 주세요' },
+      { key: 'title', label: '영상 제목', type: 'text', defaultValue: '[심야괴담회] 건드리지 말아야 할 것을 건드렸다... 한번의 소리가 바꿔버린운명 #심야괴담회', placeholder: '영상 제목을 입력해 주세요', maxLength: 120, multiline: true },
+      { key: 'channel', label: '채널명', type: 'text', defaultValue: '채널 명', placeholder: '채널명을 입력해 주세요', maxLength: 50 },
+      { key: 'views', label: '조회수 및 업로드 시간', type: 'text', defaultValue: '조회수 5.3천회 · 1시간 전', placeholder: '예: 조회수 5.3천회 · 1시간 전' }
     ],
     layers: [
       { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 1400, height: 1127 },
@@ -66,17 +66,17 @@ export const TEMPLATES: TemplateConfig[] = [
   },
   {
     id: 'insta-mo',
-    name: 'Instagram Mobile Feed (Figma)',
+    name: '인스타그램 모바일 피드 (insta_mo)',
     category: 'Instagram',
     width: 590,
     height: 1214,
     aspectRatio: '590:1214',
     fields: [
-      { key: 'avatar', label: 'User Avatar', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80' },
-      { key: 'username', label: 'Username', type: 'text', defaultValue: 'hyundaiwia_official', maxLength: 30 },
-      { key: 'postImage', label: 'Post Image', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80' },
-      { key: 'likes', label: 'Likes Text', type: 'text', defaultValue: 'ju0_e님 외 여러 명이 좋아합니다', placeholder: 'e.g. ju0_e님 외 여러 명이 좋아합니다' },
-      { key: 'caption', label: 'Caption Text', type: 'text', defaultValue: 'hyundaiwia_official 현대위아 멘토링 우수팀이ㅇㅇㅇㅇㅇㅇㅇㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ', maxLength: 350, multiline: true }
+      { key: 'avatar', label: '사용자 프로필 이미지', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80', placeholder: '프로필 이미지를 업로드해 주세요' },
+      { key: 'username', label: '사용자 아이디 (계정명)', type: 'text', defaultValue: 'hyundaiwia_official', placeholder: '사용자 계정명을 입력해 주세요', maxLength: 30 },
+      { key: 'postImage', label: '피드 메인 이미지', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80', placeholder: '게시물 메인 이미지를 업로드해 주세요' },
+      { key: 'likes', label: '좋아요 문구', type: 'text', defaultValue: 'ju0_e님 외 여러 명이 좋아합니다', placeholder: '예: ju0_e님 외 여러 명이 좋아합니다' },
+      { key: 'caption', label: '피드 본문 텍스트', type: 'text', defaultValue: 'hyundaiwia_official 현대위아 멘토링 우수팀이ㅇㅇㅇㅇㅇㅇㅇㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ', placeholder: '피드 본문 내용을 입력해 주세요', maxLength: 350, multiline: true }
     ],
     layers: [
       { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 590, height: 1214 },
@@ -89,15 +89,15 @@ export const TEMPLATES: TemplateConfig[] = [
   },
   {
     id: 'insta-story',
-    name: 'Instagram Mobile Story (Figma)',
+    name: '인스타그램 모바일 스토리 (insta_story)',
     category: 'Instagram',
     width: 1080,
     height: 1960,
     aspectRatio: '1080:1960',
     fields: [
-      { key: 'storyImage', label: 'Story Background Image', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1080&q=80' },
-      { key: 'avatar', label: 'Creator Avatar', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80' },
-      { key: 'username', label: 'Username', type: 'text', defaultValue: 'signature_library', maxLength: 30 }
+      { key: 'storyImage', label: '스토리 배경 이미지', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1080&q=80', placeholder: '스토리 전체 배경 이미지를 업로드해 주세요' },
+      { key: 'avatar', label: '스토리 프로필 이미지', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80', placeholder: '프로필 이미지를 업로드해 주세요' },
+      { key: 'username', label: '스토리 계정명', type: 'text', defaultValue: 'signature_library', placeholder: '계정명을 입력해 주세요', maxLength: 30 }
     ],
     layers: [
       { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 1080, height: 1960 },
