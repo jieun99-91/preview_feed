@@ -3,10 +3,9 @@ import { TEMPLATES } from './templates';
 import type { TemplateConfig } from './templates';
 import Sidebar from './components/Editor/Sidebar';
 import Canvas from './components/Editor/Canvas';
-import LayerPanel from './components/Editor/LayerPanel';
 import { toPng } from 'html-to-image';
 import { jsPDF } from 'jspdf';
-import { LayoutGrid, Sun, Moon, Info, HelpCircle } from 'lucide-react';
+import { LayoutGrid, Sun, Moon, Info, HelpCircle, Download, FileText, ZoomIn, ZoomOut } from 'lucide-react';
 
 export const App: React.FC = () => {
   // 1. SELECT TEMPLATE STATE
@@ -63,18 +62,6 @@ export const App: React.FC = () => {
     }));
   };
 
-  // Visibility toggle handler
-  const handleToggleLayerVisibility = (layerId: string) => {
-    setVisibleLayerIds((prev) => {
-      const next = new Set(prev);
-      if (next.has(layerId)) {
-        next.delete(layerId);
-      } else {
-        next.add(layerId);
-      }
-      return next;
-    });
-  };
 
   // High-definition PNG export mechanism
   const handleDownloadPng = () => {
@@ -189,6 +176,30 @@ export const App: React.FC = () => {
         </div>
 
         <div className="topbar-right">
+          {/* Export PNG */}
+          <button 
+            type="button" 
+            className={`topbar-download-btn btn-primary ${isExporting ? 'btn-loading' : ''}`}
+            onClick={handleDownloadPng}
+            disabled={isExporting}
+          >
+            <Download size={15} />
+            <span>{isExporting ? 'PNG 저장 중...' : 'PNG 이미지 다운로드'}</span>
+          </button>
+
+          {/* Export PDF */}
+          <button 
+            type="button" 
+            className={`topbar-download-btn btn-secondary ${isExporting ? 'btn-loading' : ''}`}
+            onClick={handleDownloadPdf}
+            disabled={isExporting}
+          >
+            <FileText size={15} />
+            <span>{isExporting ? 'PDF 저장 중...' : 'PDF 문서 다운로드'}</span>
+          </button>
+
+          <div className="topbar-divider" style={{ margin: '0 8px' }} />
+
           {/* Guide toggle */}
           <button 
             type="button" 
@@ -247,21 +258,41 @@ export const App: React.FC = () => {
             hoveredLayerId={hoveredLayerId}
             setHoveredLayerId={setHoveredLayerId}
           />
-        </main>
 
-        {/* RIGHT LAYER / ACTIONS INSPECTOR */}
-        <LayerPanel
-          template={selectedTemplate}
-          selectedLayerId={selectedLayerId}
-          onSelectLayer={setSelectedLayerId}
-          visibleLayerIds={visibleLayerIds}
-          onToggleLayerVisibility={handleToggleLayerVisibility}
-          zoom={zoom}
-          onZoomChange={setZoom}
-          onDownloadPng={handleDownloadPng}
-          onDownloadPdf={handleDownloadPdf}
-          isExporting={isExporting}
-        />
+          {/* Floating Canvas Zoom Controls */}
+          <div className="floating-zoom-toolbar">
+            <button 
+              type="button" 
+              className="zoom-btn" 
+              onClick={() => setZoom(Math.max(0.1, zoom - 0.1))}
+              title="축소"
+            >
+              <ZoomOut size={14} />
+            </button>
+            <span className="zoom-value">{Math.round(zoom * 100)}%</span>
+            <button 
+              type="button" 
+              className="zoom-btn" 
+              onClick={() => setZoom(Math.min(3, zoom + 0.1))}
+              title="확대"
+            >
+              <ZoomIn size={14} />
+            </button>
+            <div className="zoom-toolbar-divider" />
+            <button 
+              type="button" 
+              className="preset-btn" 
+              onClick={() => {
+                const fitWidth = (window.innerWidth - 380) / selectedTemplate.width;
+                const fitHeight = (window.innerHeight - 150) / selectedTemplate.height;
+                const fitZoom = Math.max(0.2, Math.min(fitWidth, fitHeight, 0.9));
+                setZoom(Math.round(fitZoom * 100) / 100);
+              }}
+            >
+              자동 맞춤
+            </button>
+          </div>
+        </main>
       </div>
     </div>
   );
