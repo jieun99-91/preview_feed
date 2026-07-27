@@ -5,6 +5,7 @@ import Sidebar from './components/Editor/Sidebar';
 import Canvas from './components/Editor/Canvas';
 import LayerPanel from './components/Editor/LayerPanel';
 import { toPng } from 'html-to-image';
+import { jsPDF } from 'jspdf';
 import { LayoutGrid, Sun, Moon, Info, HelpCircle } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -118,6 +119,56 @@ export const App: React.FC = () => {
     }, 150);
   };
 
+  // High-definition PDF export mechanism
+  const handleDownloadPdf = () => {
+    const node = document.getElementById('preview-canvas-export-target');
+    if (!node) return;
+
+    setIsExporting(true);
+
+    // Run in next animation frame to ensure outlines are hidden and DOM is stable
+    setTimeout(() => {
+      // Temporarily clear active hover/selection states before drawing
+      const prevSelected = selectedLayerId;
+      setSelectedLayerId(null);
+      setHoveredLayerId(null);
+
+      // Trigger html-to-image capture
+      toPng(node, {
+        cacheBust: true,
+        pixelRatio: 2, // Double resolution for super crisp print/retina results
+        width: selectedTemplate.width,
+        height: selectedTemplate.height,
+        style: {
+          transform: 'none',
+          transformOrigin: 'top left',
+        },
+      })
+        .then((dataUrl) => {
+          const orientation = selectedTemplate.width > selectedTemplate.height ? 'l' : 'p';
+          
+          const pdf = new jsPDF({
+            orientation: orientation,
+            unit: 'px',
+            format: [selectedTemplate.width, selectedTemplate.height],
+          });
+
+          pdf.addImage(dataUrl, 'PNG', 0, 0, selectedTemplate.width, selectedTemplate.height);
+          pdf.save(`${selectedTemplate.id}-preview.pdf`);
+
+          setIsExporting(false);
+          // Restore selection
+          setSelectedLayerId(prevSelected);
+        })
+        .catch((err) => {
+          console.error('Export failed:', err);
+          alert('PDF export failed. Please make sure all uploaded images are fully loaded and try again.');
+          setIsExporting(false);
+          setSelectedLayerId(prevSelected);
+        });
+    }, 150);
+  };
+    
   return (
     <div className={`editor-app-wrapper theme-${editorTheme}`}>
       {/* --- TOP BAR NAVIGATION --- */}
@@ -208,6 +259,7 @@ export const App: React.FC = () => {
           zoom={zoom}
           onZoomChange={setZoom}
           onDownloadPng={handleDownloadPng}
+          onDownloadPdf={handleDownloadPdf}
           isExporting={isExporting}
         />
       </div>

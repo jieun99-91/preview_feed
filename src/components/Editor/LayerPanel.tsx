@@ -11,6 +11,7 @@ interface LayerPanelProps {
   zoom: number;
   onZoomChange: (zoom: number) => void;
   onDownloadPng: () => void;
+  onDownloadPdf: () => void;
   isExporting: boolean;
 }
 
@@ -23,6 +24,7 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
   zoom,
   onZoomChange,
   onDownloadPng,
+  onDownloadPdf,
   isExporting,
 }) => {
   // Zoom presets helper
@@ -61,11 +63,12 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
           
           <button 
             type="button" 
-            className="btn-secondary btn-full"
-            onClick={() => alert('PDF export functionality is planned for Phase 4. Structuring is ready to connect a library like jsPDF.')}
+            className={`btn-secondary btn-full ${isExporting ? 'btn-loading' : ''}`}
+            onClick={onDownloadPdf}
+            disabled={isExporting}
           >
             <FileText size={16} />
-            <span>Export PDF (Planned)</span>
+            <span>{isExporting ? 'Exporting PDF...' : 'Download PDF'}</span>
           </button>
         </div>
 
