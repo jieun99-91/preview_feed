@@ -6,6 +6,22 @@ import instaMoIconCarouselPng from '../../assets/insta-mo-icon-carousel.png';
 import instaMoIconSinglePng from '../../assets/insta-mo-icon-single.png';
 import { ThumbsUp, ThumbsDown } from 'lucide-react';
 
+const renderTextWithMentions = (text: string) => {
+  if (!text) return '';
+  // Split on @ followed by non-whitespace/non-newline characters
+  const parts = text.split(/(@[^\s\n]+)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('@')) {
+      return (
+        <span key={index} style={{ color: '#574FD5', fontWeight: 600 }}>
+          {part}
+        </span>
+      );
+    }
+    return <span key={index}>{part}</span>;
+  });
+};
+
 interface CanvasProps {
   template: TemplateConfig;
   values: Record<string, string>;
@@ -304,7 +320,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                 width: '100%',
               }}>
                 <span style={{ fontWeight: 700, marginRight: '6px' }}>{usernameVal}</span>
-                <span>{captionVal}</span>
+                <span>{renderTextWithMentions(captionVal)}</span>
               </div>
             ), { width: '552px', margin: '8px 19px 24px 19px', height: 'auto' })}
 
@@ -461,7 +477,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                   width: '100%',
                 }}>
                   <span style={{ fontWeight: 700, marginRight: '8px' }}>{usernameVal}</span>
-                  <span>{commentVal}</span>
+                  <span>{renderTextWithMentions(commentVal)}</span>
                 </div>
               ), { width: '100%', height: 'auto' })}
 
