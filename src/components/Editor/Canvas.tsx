@@ -154,7 +154,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                     fontSize: '37px',
                     fontWeight: 700,
                     color: '#000000',
-                    fontFamily: 'Noto Sans KR, sans-serif',
+                    fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                     lineHeight: '50px',
                     wordBreak: 'break-word',
                     whiteSpace: 'pre-wrap',
@@ -170,7 +170,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                     fontSize: '32px',
                     fontWeight: 500,
                     color: '#606060',
-                    fontFamily: 'Noto Sans KR, sans-serif',
+                    fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                     lineHeight: '40px',
                   }}>
                     {channelVal}
@@ -183,7 +183,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                     fontSize: '32px',
                     fontWeight: 500,
                     color: '#606060',
-                    fontFamily: 'Noto Sans KR, sans-serif',
+                    fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                     lineHeight: '40px',
                   }}>
                     {viewsVal}
@@ -259,7 +259,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                   fontSize: '21px',
                   fontWeight: 500,
                   color: '#000000',
-                  fontFamily: 'Noto Sans KR, sans-serif',
+                  fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                 }}>
                   {usernameVal}
                 </div>
@@ -313,7 +313,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                 fontSize: '20px',
                 fontWeight: 500,
                 color: '#000000',
-                fontFamily: 'Noto Sans KR, sans-serif',
+                fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                 lineHeight: '28px',
                 wordBreak: 'break-word',
                 whiteSpace: 'pre-wrap',
@@ -392,7 +392,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                   fontSize: '39.5px',
                   fontWeight: 400,
                   color: '#ffffff',
-                  fontFamily: 'Pretendard, sans-serif',
+                  fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                   textShadow: '0 2px 4px rgba(0,0,0,0.4)',
                 }}>
                   {usernameVal}
@@ -470,7 +470,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                   fontSize: '26.8px',
                   fontWeight: 500,
                   color: '#000000',
-                  fontFamily: 'Noto Sans KR, sans-serif',
+                  fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                   lineHeight: '36px',
                   wordBreak: 'break-word',
                   whiteSpace: 'pre-wrap',
@@ -490,7 +490,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                     fontSize: '24.3px',
                     fontWeight: 500,
                     color: '#6a717a',
-                    fontFamily: 'Noto Sans KR, sans-serif',
+                    fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                   }}>
                     {timeVal}
                   </span>
@@ -502,7 +502,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                     fontSize: '24.3px',
                     fontWeight: 500,
                     color: '#6a717a',
-                    fontFamily: 'Noto Sans KR, sans-serif',
+                    fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                   }}>
                     {likesVal}
                   </span>
@@ -513,7 +513,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                   fontSize: '24.3px',
                   fontWeight: 500,
                   color: '#6a717a',
-                  fontFamily: 'Noto Sans KR, sans-serif',
+                  fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                   cursor: 'pointer',
                 }}>
                   답글 달기
@@ -588,7 +588,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                     fontSize: '24.3px',
                     fontWeight: 500,
                     color: '#0f0f0f',
-                    fontFamily: 'Noto Sans KR, sans-serif',
+                    fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                   }}>
                     {usernameVal}
                   </span>
@@ -600,7 +600,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                     fontSize: '24.3px',
                     fontWeight: 500,
                     color: '#606060',
-                    fontFamily: 'Noto Sans KR, sans-serif',
+                    fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                   }}>
                     {timeVal}
                   </span>
@@ -614,7 +614,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                   fontSize: '30px',
                   fontWeight: 500,
                   color: '#0f0f0f',
-                  fontFamily: 'Noto Sans KR, sans-serif',
+                  fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                   lineHeight: '40px',
                   wordBreak: 'break-word',
                   whiteSpace: 'pre-wrap',
@@ -635,7 +635,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                       fontSize: '24.3px',
                       fontWeight: 500,
                       color: '#606060',
-                      fontFamily: 'Noto Sans KR, sans-serif',
+                      fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                     }}>
                       {likesVal}
                     </span>
@@ -650,7 +650,7 @@ export const Canvas: React.FC<CanvasProps> = ({
                   fontSize: '28px',
                   fontWeight: 500,
                   color: '#0f0f0f',
-                  fontFamily: 'Noto Sans KR, sans-serif',
+                  fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
                   cursor: 'pointer',
                 }}>
                   답글

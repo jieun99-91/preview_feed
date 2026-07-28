@@ -61,9 +61,9 @@ export const TEMPLATES: TemplateConfig[] = [
       { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 1400, height: 1127 },
       { id: 'video-thumbnail', type: 'image', fieldKey: 'thumbnail', x: 67, y: 70, width: 1266, height: 712, borderRadius: 12, objectFit: 'cover' },
       { id: 'channel-avatar', type: 'image', fieldKey: 'avatar', x: 67, y: 825, width: 86, height: 86, borderRadius: 43 },
-      { id: 'video-title', type: 'text', fieldKey: 'title', x: 179, y: 825, width: 1119, height: 112, fontSize: 37, fontWeight: 700, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 2, lineHeight: 50 },
-      { id: 'channel-name', type: 'text', fieldKey: 'channel', x: 178.5, y: 937, width: 1120, height: 60, fontSize: 32, fontWeight: 500, color: '#606060', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 1 },
-      { id: 'views-date', type: 'text', fieldKey: 'views', x: 178.5, y: 997, width: 1120, height: 60, fontSize: 32, fontWeight: 500, color: '#606060', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 1 }
+      { id: 'video-title', type: 'text', fieldKey: 'title', x: 179, y: 825, width: 1119, height: 112, fontSize: 37, fontWeight: 700, color: '#000000', fontFamily: 'Noto Sans, Noto Sans KR, sans-serif', maxLines: 2, lineHeight: 50 },
+      { id: 'channel-name', type: 'text', fieldKey: 'channel', x: 178.5, y: 937, width: 1120, height: 60, fontSize: 32, fontWeight: 500, color: '#606060', fontFamily: 'Noto Sans, Noto Sans KR, sans-serif', maxLines: 1 },
+      { id: 'views-date', type: 'text', fieldKey: 'views', x: 178.5, y: 997, width: 1120, height: 60, fontSize: 32, fontWeight: 500, color: '#606060', fontFamily: 'Noto Sans, Noto Sans KR, sans-serif', maxLines: 1 }
     ]
   },
   {
@@ -86,9 +86,9 @@ export const TEMPLATES: TemplateConfig[] = [
     layers: [
       { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 590, height: 1214 },
       { id: 'user-avatar', type: 'image', fieldKey: 'avatar', x: 15.5, y: 14, width: 48, height: 48, borderRadius: 24 },
-      { id: 'user-username', type: 'text', fieldKey: 'username', x: 78.5, y: 24, width: 300, height: 30, fontSize: 21, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 1 },
+      { id: 'user-username', type: 'text', fieldKey: 'username', x: 78.5, y: 24, width: 300, height: 30, fontSize: 21, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans, Noto Sans KR, sans-serif', maxLines: 1 },
       { id: 'post-image', type: 'image', fieldKey: 'postImage', x: 0, y: 78, width: 590, height: 738, objectFit: 'cover' },
-      { id: 'post-caption', type: 'text', fieldKey: 'caption', x: 19, y: 920, width: 552, height: 168, fontSize: 20, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif', maxLines: 5, lineHeight: 28 }
+      { id: 'post-caption', type: 'text', fieldKey: 'caption', x: 19, y: 920, width: 552, height: 168, fontSize: 20, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans, Noto Sans KR, sans-serif', maxLines: 5, lineHeight: 28 }
     ]
   },
   {
@@ -127,9 +127,9 @@ export const TEMPLATES: TemplateConfig[] = [
     layers: [
       { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 790, height: 175.4 },
       { id: 'comment-avatar', type: 'image', fieldKey: 'avatar', x: 12.4, y: 12.4, width: 68.3, height: 68.3, borderRadius: 34 },
-      { id: 'comment-text', type: 'text', fieldKey: 'comment', x: 105.6, y: 12.4, width: 672, height: 97, fontSize: 26.8, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif' },
-      { id: 'comment-time', type: 'text', fieldKey: 'time', x: 105.6, y: 133, width: 37, height: 30, fontSize: 24.3, fontWeight: 500, color: '#6a717a', fontFamily: 'Noto Sans KR, sans-serif' },
-      { id: 'comment-likes', type: 'text', fieldKey: 'likes', x: 162.5, y: 133, width: 123, height: 30, fontSize: 24.3, fontWeight: 500, color: '#6a717a', fontFamily: 'Noto Sans KR, sans-serif' }
+      { id: 'comment-text', type: 'text', fieldKey: 'comment', x: 105.6, y: 12.4, width: 672, height: 97, fontSize: 26.8, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans, Noto Sans KR, sans-serif' },
+      { id: 'comment-time', type: 'text', fieldKey: 'time', x: 105.6, y: 133, width: 37, height: 30, fontSize: 24.3, fontWeight: 500, color: '#6a717a', fontFamily: 'Noto Sans, Noto Sans KR, sans-serif' },
+      { id: 'comment-likes', type: 'text', fieldKey: 'likes', x: 162.5, y: 133, width: 123, height: 30, fontSize: 24.3, fontWeight: 500, color: '#6a717a', fontFamily: 'Noto Sans, Noto Sans KR, sans-serif' }
     ]
   },
   {
@@ -149,10 +149,10 @@ export const TEMPLATES: TemplateConfig[] = [
     layers: [
       { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 790, height: 186 },
       { id: 'comment-avatar', type: 'image', fieldKey: 'avatar', x: 14, y: 15, width: 81, height: 81, borderRadius: 40.5 },
-      { id: 'comment-username', type: 'text', fieldKey: 'username', x: 105, y: 15, width: 91, height: 46, fontSize: 24.3, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif' },
-      { id: 'comment-time', type: 'text', fieldKey: 'time', x: 206, y: 15, width: 64, height: 46, fontSize: 24.3, fontWeight: 500, color: '#606060', fontFamily: 'Noto Sans KR, sans-serif' },
-      { id: 'comment-text', type: 'text', fieldKey: 'comment', x: 105, y: 61, width: 640, height: 46, fontSize: 30, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif' },
-      { id: 'comment-likes', type: 'text', fieldKey: 'likes', x: 153, y: 125, width: 42, height: 46, fontSize: 24.3, fontWeight: 500, color: '#606060', fontFamily: 'Noto Sans KR, sans-serif' }
+      { id: 'comment-username', type: 'text', fieldKey: 'username', x: 105, y: 15, width: 91, height: 46, fontSize: 24.3, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans, Noto Sans KR, sans-serif' },
+      { id: 'comment-time', type: 'text', fieldKey: 'time', x: 206, y: 15, width: 64, height: 46, fontSize: 24.3, fontWeight: 500, color: '#606060', fontFamily: 'Noto Sans, Noto Sans KR, sans-serif' },
+      { id: 'comment-text', type: 'text', fieldKey: 'comment', x: 105, y: 61, width: 640, height: 46, fontSize: 30, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans, Noto Sans KR, sans-serif' },
+      { id: 'comment-likes', type: 'text', fieldKey: 'likes', x: 153, y: 125, width: 42, height: 46, fontSize: 24.3, fontWeight: 500, color: '#606060', fontFamily: 'Noto Sans, Noto Sans KR, sans-serif' }
     ]
   }
 ];
