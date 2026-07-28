@@ -4,6 +4,7 @@ import iconStoryPng from '../../assets/icon-story.png';
 import instaMoGuidePng from '../../assets/insta_mo-guide.png';
 import instaMoIconCarouselPng from '../../assets/insta-mo-icon-carousel.png';
 import instaMoIconSinglePng from '../../assets/insta-mo-icon-single.png';
+import { ThumbsUp, ThumbsDown } from 'lucide-react';
 
 interface CanvasProps {
   template: TemplateConfig;
@@ -388,6 +389,258 @@ export const Canvas: React.FC<CanvasProps> = ({
                 style={{ position: 'absolute', left: '25px', top: '56px', width: '1030px', height: '99px' }} 
                 alt="Story Icons" 
               />
+
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ==========================================
+  // 4. INSTAGRAM COMMENT TEMPLATE RENDERER
+  // ==========================================
+  if (template.id === 'insta-comment') {
+    const avatarVal = values['avatar'] || '';
+    const usernameVal = values['username'] || '';
+    const commentVal = values['comment'] || '';
+    const timeVal = values['time'] || '';
+    const likesVal = values['likes'] || '';
+
+    return (
+      <div className="canvas-workspace" onClick={handleCanvasClick}>
+        <div 
+          className="canvas-container-shadow-wrap"
+          style={{
+            width: template.width,
+            height: 'auto',
+            transform: `scale(${zoom})`,
+            transformOrigin: 'center center',
+            transition: 'transform 0.15s cubic-bezier(0.4, 0, 0.2, 1)',
+          }}
+        >
+          <div
+            ref={canvasRef}
+            id="preview-canvas-export-target"
+            className="preview-canvas-core"
+            style={{
+              width: template.width,
+              height: 'auto', // Dynamic shrunken height!
+              position: 'relative',
+              backgroundColor: '#ffffff',
+              display: 'flex',
+              flexDirection: 'row',
+              padding: '12.4px',
+              gap: '24.9px',
+              boxSizing: 'border-box',
+              alignItems: 'flex-start',
+            }}
+          >
+            {/* Left: Profile Avatar */}
+            {renderLayerWrapper('comment-avatar', (
+              <img 
+                src={avatarVal} 
+                style={{ width: '68.3px', height: '68.3px', borderRadius: '34.15px', display: 'block', objectFit: 'cover' }} 
+                alt="Avatar" 
+              />
+            ), { width: '68.3px', height: '68.3px', borderRadius: '34px' })}
+
+            {/* Right: Content details (Username + text, time, likes, reply) */}
+            <div style={{ display: 'flex', flexDirection: 'column', flex: 1, gap: '12px', boxSizing: 'border-box' }}>
+              
+              {/* Comment text body with bold username prefix inline */}
+              {renderLayerWrapper('comment-text', (
+                <div style={{
+                  fontSize: '26.8px',
+                  fontWeight: 500,
+                  color: '#000000',
+                  fontFamily: 'Noto Sans KR, sans-serif',
+                  lineHeight: '36px',
+                  wordBreak: 'break-word',
+                  whiteSpace: 'pre-wrap',
+                  width: '100%',
+                }}>
+                  <span style={{ fontWeight: 700, marginRight: '8px' }}>{usernameVal}</span>
+                  <span>{commentVal}</span>
+                </div>
+              ), { width: '100%', height: 'auto' })}
+
+              {/* Action row (time, likes, reply) */}
+              <div style={{ display: 'flex', flexDirection: 'row', gap: '24px', alignItems: 'center', boxSizing: 'border-box' }}>
+                
+                {/* Time */}
+                {renderLayerWrapper('comment-time', (
+                  <span style={{
+                    fontSize: '24.3px',
+                    fontWeight: 500,
+                    color: '#6a717a',
+                    fontFamily: 'Noto Sans KR, sans-serif',
+                  }}>
+                    {timeVal}
+                  </span>
+                ), { height: 'auto' })}
+
+                {/* Likes count */}
+                {renderLayerWrapper('comment-likes', (
+                  <span style={{
+                    fontSize: '24.3px',
+                    fontWeight: 500,
+                    color: '#6a717a',
+                    fontFamily: 'Noto Sans KR, sans-serif',
+                  }}>
+                    {likesVal}
+                  </span>
+                ), { height: 'auto' })}
+
+                {/* Reply Button (Figma fixed text) */}
+                <span style={{
+                  fontSize: '24.3px',
+                  fontWeight: 500,
+                  color: '#6a717a',
+                  fontFamily: 'Noto Sans KR, sans-serif',
+                  cursor: 'pointer',
+                }}>
+                  답글 달기
+                </span>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ==========================================
+  // 5. YOUTUBE COMMENT TEMPLATE RENDERER
+  // ==========================================
+  if (template.id === 'youtube-comment') {
+    const avatarVal = values['avatar'] || '';
+    const usernameVal = values['username'] || '';
+    const timeVal = values['time'] || '';
+    const commentVal = values['comment'] || '';
+    const likesVal = values['likes'] || '';
+
+    return (
+      <div className="canvas-workspace" onClick={handleCanvasClick}>
+        <div 
+          className="canvas-container-shadow-wrap"
+          style={{
+            width: template.width,
+            height: 'auto',
+            transform: `scale(${zoom})`,
+            transformOrigin: 'center center',
+            transition: 'transform 0.15s cubic-bezier(0.4, 0, 0.2, 1)',
+          }}
+        >
+          <div
+            ref={canvasRef}
+            id="preview-canvas-export-target"
+            className="preview-canvas-core"
+            style={{
+              width: template.width,
+              height: 'auto', // Dynamic height to fit contents
+              position: 'relative',
+              backgroundColor: '#ffffff',
+              display: 'flex',
+              flexDirection: 'row',
+              padding: '15px 14px 15px 14px',
+              gap: '10px',
+              boxSizing: 'border-box',
+              alignItems: 'flex-start',
+            }}
+          >
+            {/* Left: Avatar Image (w: 81x81) */}
+            {renderLayerWrapper('comment-avatar', (
+              <img 
+                src={avatarVal} 
+                style={{ width: '81px', height: '81px', borderRadius: '40.5px', display: 'block', objectFit: 'cover' }} 
+                alt="Avatar" 
+              />
+            ), { width: '81px', height: '81px', borderRadius: '40.5px' })}
+
+            {/* Right: Comment details column */}
+            <div style={{ display: 'flex', flexDirection: 'column', flex: 1, gap: '10px', boxSizing: 'border-box' }}>
+              
+              {/* Header row (Username handle + Time) */}
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px', boxSizing: 'border-box' }}>
+                
+                {/* Username handle */}
+                {renderLayerWrapper('comment-username', (
+                  <span style={{
+                    fontSize: '24.3px',
+                    fontWeight: 500,
+                    color: '#0f0f0f',
+                    fontFamily: 'Noto Sans KR, sans-serif',
+                  }}>
+                    {usernameVal}
+                  </span>
+                ), { height: 'auto' })}
+
+                {/* Time elapsed */}
+                {renderLayerWrapper('comment-time', (
+                  <span style={{
+                    fontSize: '24.3px',
+                    fontWeight: 500,
+                    color: '#606060',
+                    fontFamily: 'Noto Sans KR, sans-serif',
+                  }}>
+                    {timeVal}
+                  </span>
+                ), { height: 'auto' })}
+
+              </div>
+
+              {/* Comment text body (Dynamic height) */}
+              {renderLayerWrapper('comment-text', (
+                <div style={{
+                  fontSize: '30px',
+                  fontWeight: 500,
+                  color: '#0f0f0f',
+                  fontFamily: 'Noto Sans KR, sans-serif',
+                  lineHeight: '40px',
+                  wordBreak: 'break-word',
+                  whiteSpace: 'pre-wrap',
+                  width: '100%',
+                }}>
+                  {commentVal}
+                </div>
+              ), { width: '100%', height: 'auto' })}
+
+              {/* Action row (Like, Dislike, Reply) */}
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '24px', boxSizing: 'border-box', marginTop: '4px' }}>
+                
+                {/* Like button group */}
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px' }}>
+                  <ThumbsUp size={24} style={{ color: '#030303', cursor: 'pointer' }} />
+                  {renderLayerWrapper('comment-likes', (
+                    <span style={{
+                      fontSize: '24.3px',
+                      fontWeight: 500,
+                      color: '#606060',
+                      fontFamily: 'Noto Sans KR, sans-serif',
+                    }}>
+                      {likesVal}
+                    </span>
+                  ), { height: 'auto' })}
+                </div>
+
+                {/* Dislike button */}
+                <ThumbsDown size={24} style={{ color: '#030303', cursor: 'pointer' }} />
+
+                {/* Reply button */}
+                <span style={{
+                  fontSize: '28px',
+                  fontWeight: 500,
+                  color: '#0f0f0f',
+                  fontFamily: 'Noto Sans KR, sans-serif',
+                  cursor: 'pointer',
+                }}>
+                  답글
+                </span>
+
+              </div>
 
             </div>
           </div>

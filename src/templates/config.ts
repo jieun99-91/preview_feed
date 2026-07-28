@@ -109,5 +109,50 @@ export const TEMPLATES: TemplateConfig[] = [
       { id: 'story-avatar', type: 'image', fieldKey: 'avatar', x: 31, y: 79, width: 90, height: 90, borderRadius: 45 },
       { id: 'story-username', type: 'text', fieldKey: 'username', x: 149, y: 99, width: 600, height: 70, fontSize: 39.5, fontWeight: 400, color: '#ffffff', fontFamily: 'Pretendard, sans-serif', maxLines: 1 }
     ]
+  },
+  {
+    id: 'insta-comment',
+    name: '인스타그램 댓글 (insta_comment)',
+    category: 'Instagram',
+    width: 790,
+    height: 175.4,
+    aspectRatio: '790:175',
+    fields: [
+      { key: 'avatar', label: '사용자 프로필 이미지', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80', placeholder: '프로필 이미지를 업로드해 주세요' },
+      { key: 'username', label: '사용자 아이디 (계정명)', type: 'text', defaultValue: 'dear.heejin', placeholder: '사용자 계정명을 입력해 주세요', maxLength: 30 },
+      { key: 'comment', label: '댓글 본문 텍스트', type: 'text', defaultValue: '우와 진짜 맛있겠다~~!아아아아아아아아아아아아아아아아앙아아아아앙아아아아아아아아아아아아아아아아아아아아', placeholder: '댓글 본문 내용을 입력해 주세요', maxLength: 350, multiline: true },
+      { key: 'time', label: '작성 시간', type: 'text', defaultValue: '1주', placeholder: '예: 1주, 2일 등', maxLength: 20 },
+      { key: 'likes', label: '좋아요 수', type: 'text', defaultValue: '좋아요 16개', placeholder: '예: 좋아요 16개', maxLength: 30 }
+    ],
+    layers: [
+      { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 790, height: 175.4 },
+      { id: 'comment-avatar', type: 'image', fieldKey: 'avatar', x: 12.4, y: 12.4, width: 68.3, height: 68.3, borderRadius: 34 },
+      { id: 'comment-text', type: 'text', fieldKey: 'comment', x: 105.6, y: 12.4, width: 672, height: 97, fontSize: 26.8, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif' },
+      { id: 'comment-time', type: 'text', fieldKey: 'time', x: 105.6, y: 133, width: 37, height: 30, fontSize: 24.3, fontWeight: 500, color: '#6a717a', fontFamily: 'Noto Sans KR, sans-serif' },
+      { id: 'comment-likes', type: 'text', fieldKey: 'likes', x: 162.5, y: 133, width: 123, height: 30, fontSize: 24.3, fontWeight: 500, color: '#6a717a', fontFamily: 'Noto Sans KR, sans-serif' }
+    ]
+  },
+  {
+    id: 'youtube-comment',
+    name: '유튜브 댓글 (youtube_comment)',
+    category: 'YouTube',
+    width: 790,
+    height: 186,
+    aspectRatio: '790:186',
+    fields: [
+      { key: 'avatar', label: '사용자 프로필 이미지', type: 'image', defaultValue: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80', placeholder: '프로필 이미지를 업로드해 주세요' },
+      { key: 'username', label: '사용자 핸들 (계정명)', type: 'text', defaultValue: '@음치킨', placeholder: '사용자 핸들을 입력해 주세요', maxLength: 30 },
+      { key: 'time', label: '작성 시간', type: 'text', defaultValue: '3년 전', placeholder: '예: 3년 전, 1시간 전 등', maxLength: 20 },
+      { key: 'comment', label: '댓글 본문 텍스트', type: 'text', defaultValue: '플레이리스트가 너무 좋습니다요 ', placeholder: '댓글 본문 내용을 입력해 주세요', maxLength: 350, multiline: true },
+      { key: 'likes', label: '좋아요 수', type: 'text', defaultValue: '146', placeholder: '예: 146', maxLength: 10 }
+    ],
+    layers: [
+      { id: 'mockup-bg', type: 'mockup', x: 0, y: 0, width: 790, height: 186 },
+      { id: 'comment-avatar', type: 'image', fieldKey: 'avatar', x: 14, y: 15, width: 81, height: 81, borderRadius: 40.5 },
+      { id: 'comment-username', type: 'text', fieldKey: 'username', x: 105, y: 15, width: 91, height: 46, fontSize: 24.3, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif' },
+      { id: 'comment-time', type: 'text', fieldKey: 'time', x: 206, y: 15, width: 64, height: 46, fontSize: 24.3, fontWeight: 500, color: '#606060', fontFamily: 'Noto Sans KR, sans-serif' },
+      { id: 'comment-text', type: 'text', fieldKey: 'comment', x: 105, y: 61, width: 640, height: 46, fontSize: 30, fontWeight: 500, color: '#000000', fontFamily: 'Noto Sans KR, sans-serif' },
+      { id: 'comment-likes', type: 'text', fieldKey: 'likes', x: 153, y: 125, width: 42, height: 46, fontSize: 24.3, fontWeight: 500, color: '#606060', fontFamily: 'Noto Sans KR, sans-serif' }
+    ]
   }
 ];
