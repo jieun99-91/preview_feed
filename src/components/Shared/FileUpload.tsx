@@ -1,5 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { Upload, X } from 'lucide-react';
+import Cropper from 'react-easy-crop';
+import type { Point, Area } from 'react-easy-crop';
+import { getCroppedImg } from '../../utils/cropImage';
 
 interface FileUploadProps {
   label: string;
@@ -19,6 +22,13 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   const [isDragActive, setIsDragActive] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // States for Image Cropping Modal
+  const [srcToCrop, setSrcToCrop] = useState<string | null>(null);
+  const [crop, setCrop] = useState<Point>({ x: 0, y: 0 });
+  const [zoom, setZoom] = useState<number>(1);
+  const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
+  const [isCroppingProgress, setIsCroppingProgress] = useState(false);
+
   const handleFile = (file: File) => {
     if (!file.type.startsWith('image/')) {
       alert('Please upload an image file.');
@@ -28,7 +38,15 @@ export const FileUpload: React.FC<FileUploadProps> = ({
     const reader = new FileReader();
     reader.onload = (e) => {
       if (e.target?.result) {
-        onChange(e.target.result as string);
+        const imageResult = e.target.result as string;
+        // If it's a circular/profile upload, open the crop modal first!
+        if (isCircular) {
+          setSrcToCrop(imageResult);
+          setCrop({ x: 0, y: 0 });
+          setZoom(1);
+        } else {
+          onChange(imageResult);
+        }
       }
     };
     reader.readAsDataURL(file);
@@ -67,6 +85,33 @@ export const FileUpload: React.FC<FileUploadProps> = ({
     onChange('');
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
+    }
+  };
+
+  const onCropComplete = (_croppedArea: Area, croppedAreaPixels: Area) => {
+    setCroppedAreaPixels(croppedAreaPixels);
+  };
+
+  const handleCropCancel = () => {
+    setSrcToCrop(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
+
+  const handleCropSave = async () => {
+    if (!srcToCrop || !croppedAreaPixels) return;
+
+    try {
+      setIsCroppingProgress(true);
+      const croppedBase64 = await getCroppedImg(srcToCrop, croppedAreaPixels);
+      onChange(croppedBase64);
+      setSrcToCrop(null);
+    } catch (error) {
+      console.error('Failed to crop image:', error);
+      alert('이미지를 자르는 도중 오류가 발생했습니다. 다시 시도해 주세요.');
+    } finally {
+      setIsCroppingProgress(false);
     }
   };
 
@@ -148,6 +193,65 @@ export const FileUpload: React.FC<FileUploadProps> = ({
         className="hidden-file-input"
         style={{ display: 'none' }}
       />
+
+      {/* --- CROP MODAL OVERLAY --- */}
+      {srcToCrop && (
+        <div className="crop-modal-overlay">
+          <div className="crop-modal-container">
+            <h3 className="crop-modal-title">프로필 이미지 영역 자르기</h3>
+            
+            <div className="crop-area-viewport">
+              <Cropper
+                image={srcToCrop}
+                crop={crop}
+                zoom={zoom}
+                aspect={1}
+                cropShape="round"
+                showGrid={false}
+                onCropChange={setCrop}
+                onCropComplete={onCropComplete}
+                onZoomChange={setZoom}
+              />
+            </div>
+
+            <div className="crop-slider-control">
+              <div className="crop-slider-label">
+                <span>크기 조절</span>
+                <span>{Math.round(zoom * 100)}%</span>
+              </div>
+              <input
+                type="range"
+                value={zoom}
+                min={1}
+                max={3}
+                step={0.05}
+                aria-label="Zoom"
+                onChange={(e) => setZoom(Number(e.target.value))}
+                className="crop-slider-input"
+              />
+            </div>
+
+            <div className="crop-modal-footer">
+              <button 
+                type="button" 
+                className="crop-btn-cancel" 
+                onClick={handleCropCancel}
+                disabled={isCroppingProgress}
+              >
+                취소
+              </button>
+              <button 
+                type="button" 
+                className="crop-btn-confirm" 
+                onClick={handleCropSave}
+                disabled={isCroppingProgress}
+              >
+                {isCroppingProgress ? '처리 중...' : '적용하기'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
