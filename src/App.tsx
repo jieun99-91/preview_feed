@@ -39,7 +39,7 @@ export const App: React.FC = () => {
 
   // 5. EXPORT & INTERFACE STATES
   const [isExporting, setIsExporting] = useState<boolean>(false);
-  const [showGuide, setShowGuide] = useState<boolean>(true);
+  const [showGuide, setShowGuide] = useState<boolean>(false);
   const [showCropGuide, setShowCropGuide] = useState<boolean>(false);
 
   // Reset visibility set and clear selection on template change
