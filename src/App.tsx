@@ -5,7 +5,7 @@ import Sidebar from './components/Editor/Sidebar';
 import Canvas from './components/Editor/Canvas';
 import { toPng } from 'html-to-image';
 import { jsPDF } from 'jspdf';
-import { LayoutGrid, Info, HelpCircle, Download, FileText, ZoomIn, ZoomOut } from 'lucide-react';
+import { Info, HelpCircle, Download, FileText, ZoomIn, ZoomOut } from 'lucide-react';
 
 export const App: React.FC = () => {
   // 1. SELECT TEMPLATE STATE
@@ -166,8 +166,7 @@ export const App: React.FC = () => {
       <header className="editor-topbar">
         <div className="topbar-left">
           <div className="logo-group">
-            <LayoutGrid className="logo-icon" size={20} />
-            <h1>소셜 프리뷰 에디터 <span className="logo-badge">MVP</span></h1>
+            <h1>프리뷰 에디터</h1>
           </div>
           <div className="topbar-divider" />
           <div className="topbar-template-info">
@@ -188,7 +187,7 @@ export const App: React.FC = () => {
             disabled={isExporting}
           >
             <Download size={15} />
-            <span>{isExporting ? 'PNG 저장 중...' : 'PNG 이미지 다운로드'}</span>
+            <span>{isExporting ? 'PNG 저장 중...' : 'PNG 다운로드'}</span>
           </button>
 
           {/* Export PDF */}
@@ -199,7 +198,7 @@ export const App: React.FC = () => {
             disabled={isExporting}
           >
             <FileText size={15} />
-            <span>{isExporting ? 'PDF 저장 중...' : 'PDF 문서 다운로드'}</span>
+            <span>{isExporting ? 'PDF 저장 중...' : 'PDF 다운로드'}</span>
           </button>
 
           <div className="topbar-divider" style={{ margin: '0 8px' }} />
@@ -291,6 +290,20 @@ export const App: React.FC = () => {
           </div>
         </main>
       </div>
+
+      {/* --- FOOTER CREATOR INFO --- */}
+      <footer style={{
+        textAlign: 'center',
+        padding: '10px 0',
+        fontSize: '11px',
+        fontWeight: 500,
+        color: 'var(--text-secondary)',
+        borderTop: '1px solid var(--border-color)',
+        backgroundColor: 'var(--bg-panel)',
+        zIndex: 50,
+      }}>
+        제작자: 김지은
+      </footer>
     </div>
   );
 };
