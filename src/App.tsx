@@ -168,14 +168,6 @@ export const App: React.FC = () => {
           <div className="logo-group">
             <h1>프리뷰 에디터</h1>
           </div>
-          <div className="topbar-divider" />
-          <div className="topbar-template-info">
-            <span className="info-label">선택된 템플릿:</span>
-            <span className="info-value">{selectedTemplate.name}</span>
-            <span className="dimension-badge">
-              {selectedTemplate.width} × {selectedTemplate.height}px ({selectedTemplate.aspectRatio})
-            </span>
-          </div>
         </div>
 
         <div className="topbar-right">

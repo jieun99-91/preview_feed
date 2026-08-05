@@ -68,13 +68,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
               </optgroup>
             </select>
           </div>
+          <div style={{ marginTop: '8px', fontSize: '12px', fontWeight: 600, color: 'var(--text-secondary)' }}>
+            대지 사이즈는 {selectedTemplate.width}*{selectedTemplate.height}
+          </div>
         </div>
 
         <div className="sidebar-divider" />
 
         {/* Dynamic Inputs Form */}
         <div className="inputs-section">
-          <h3 className="section-title">콘텐츠 입력</h3>
           {selectedTemplate.fields.map((field) => {
             const isFieldActive = activeFieldKey === field.key;
             const currentValue = values[field.key] || '';
