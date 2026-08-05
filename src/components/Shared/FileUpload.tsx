@@ -120,7 +120,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
     width: '90px',
     height: '90px',
     borderRadius: '50%',
-    margin: '4px auto 0 auto',
+    margin: '4px 0 0 0',
     overflow: 'hidden',
     border: '1px dashed var(--input-border)',
   } : {};
@@ -129,7 +129,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
     width: '90px',
     height: '90px',
     borderRadius: '50%',
-    margin: '4px auto 0 auto',
+    margin: '4px 0 0 0',
     padding: '0',
     display: 'flex',
     flexDirection: 'column',
@@ -139,8 +139,8 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   } : {};
 
   return (
-    <div className={`file-upload-container ${className}`} style={isCircular ? { textAlign: 'center' } : {}}>
-      <label className="input-label" style={isCircular ? { textAlign: 'center', marginBottom: '8px' } : {}}>{label}</label>
+    <div className={`file-upload-container ${className}`} style={isCircular ? { textAlign: 'left' } : {}}>
+      <label className="input-label" style={isCircular ? { textAlign: 'left', marginBottom: '8px' } : {}}>{label}</label>
       
       {value ? (
         <div className="image-preview-wrapper" style={previewWrapperStyle} onClick={triggerInput}>
