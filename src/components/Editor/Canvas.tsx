@@ -8,10 +8,10 @@ import { ThumbsUp, ThumbsDown } from 'lucide-react';
 
 const renderTextWithMentions = (text: string) => {
   if (!text) return '';
-  // Split on @ followed by non-whitespace/non-newline characters
-  const parts = text.split(/(@[^\s\n]+)/g);
+  // Split on @ or # followed by non-whitespace/non-newline characters
+  const parts = text.split(/((?:@|#)[^\s\n]+)/g);
   return parts.map((part, index) => {
-    if (part.startsWith('@')) {
+    if (part.startsWith('@') || part.startsWith('#')) {
       return (
         <span key={index} style={{ color: '#574FD5', fontWeight: 600 }}>
           {part}
