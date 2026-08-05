@@ -4,7 +4,7 @@ import iconStoryPng from '../../assets/icon-story.png';
 import instaMoGuidePng from '../../assets/insta_mo-guide.png';
 import instaMoIconCarouselPng from '../../assets/insta-mo-icon-carousel.png';
 import instaMoIconSinglePng from '../../assets/insta-mo-icon-single.png';
-import { ThumbsUp, ThumbsDown, Heart } from 'lucide-react';
+import { ThumbsUp, ThumbsDown } from 'lucide-react';
 
 const renderTextWithMentions = (text: string) => {
   if (!text) return '';
@@ -408,37 +408,6 @@ export const Canvas: React.FC<CanvasProps> = ({
 
             </div>
 
-            {/* Overlays Footer (Reply box & Heart icon) */}
-            <div style={{ position: 'absolute', bottom: '46px', left: '31px', width: '1018px', height: '74px', display: 'flex', flexDirection: 'row', alignItems: 'center', pointerEvents: 'none', zIndex: 12 }}>
-              
-              {/* Reply Box (Figma coords matched: x: 31, y: 1840 -> bottom 46px, w: 946) */}
-              <div style={{
-                width: '946px',
-                height: '74px',
-                border: '1.5px solid rgba(255, 255, 255, 0.45)',
-                borderRadius: '37px',
-                backgroundColor: 'rgba(0, 0, 0, 0.25)',
-                display: 'flex',
-                alignItems: 'center',
-                paddingLeft: '30px',
-                boxSizing: 'border-box',
-              }}>
-                <span style={{
-                  fontSize: '25px',
-                  fontWeight: 400,
-                  color: 'rgba(255, 255, 255, 0.85)',
-                  fontFamily: 'Noto Sans, Noto Sans KR, sans-serif',
-                }}>
-                  {usernameVal}님에게 답장하기...
-                </span>
-              </div>
-
-              {/* Heart Icon (Figma coords matched: x: 1003, w: 39 -> gap: 26) */}
-              <div style={{ marginLeft: '26px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Heart size={38} color="#ffffff" strokeWidth={1.8} />
-              </div>
-
-            </div>
           </div>
         </div>
       </div>
