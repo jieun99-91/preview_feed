@@ -165,8 +165,9 @@ export const App: React.FC = () => {
       {/* --- TOP BAR NAVIGATION --- */}
       <header className="editor-topbar">
         <div className="topbar-left">
-          <div className="logo-group">
-            <h1>프리뷰 에디터</h1>
+          <div className="logo-group" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <img src="/favicon.png" alt="Favicon" style={{ width: '24px', height: '24px', objectFit: 'contain', display: 'block' }} />
+            <h1 style={{ margin: 0 }}>프리뷰 에디터</h1>
           </div>
         </div>
 
