@@ -45,7 +45,7 @@ export interface TemplateConfig {
 export const TEMPLATES: TemplateConfig[] = [
   {
     id: 'youtube-card',
-    name: '유튜브 피드 카드 (YouTubeCard)',
+    name: '유튜브 피드 카드',
     category: 'YouTube',
     width: 1400,
     height: 1127,
@@ -68,7 +68,7 @@ export const TEMPLATES: TemplateConfig[] = [
   },
   {
     id: 'insta-mo',
-    name: '인스타그램 모바일 피드 (insta_mo)',
+    name: '인스타그램 모바일 피드',
     category: 'Instagram',
     width: 590,
     height: 1214,
@@ -93,7 +93,7 @@ export const TEMPLATES: TemplateConfig[] = [
   },
   {
     id: 'insta-story',
-    name: '인스타그램 모바일 스토리 (insta_story)',
+    name: '인스타그램 모바일 스토리',
     category: 'Instagram',
     width: 1080,
     height: 1960,
@@ -112,7 +112,7 @@ export const TEMPLATES: TemplateConfig[] = [
   },
   {
     id: 'insta-comment',
-    name: '인스타그램 댓글 (insta_comment)',
+    name: '인스타그램 댓글',
     category: 'Instagram',
     width: 790,
     height: 175.4,
@@ -134,7 +134,7 @@ export const TEMPLATES: TemplateConfig[] = [
   },
   {
     id: 'youtube-comment',
-    name: '유튜브 댓글 (youtube_comment)',
+    name: '유튜브 댓글',
     category: 'YouTube',
     width: 790,
     height: 186,

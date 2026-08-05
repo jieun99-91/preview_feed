@@ -69,7 +69,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </select>
           </div>
           <div style={{ marginTop: '8px', fontSize: '12px', fontWeight: 600, color: 'var(--text-secondary)' }}>
-            대지 사이즈는 {selectedTemplate.width}*{selectedTemplate.height}
+            대지사이즈 | {selectedTemplate.width}*{selectedTemplate.height}
           </div>
         </div>
 
@@ -93,6 +93,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       label={field.label}
                       value={currentValue}
                       onChange={(val) => onChangeField(field.key, val)}
+                      isCircular={field.key === 'avatar'}
                     />
                     {selectedTemplate.id === 'insta-mo' && field.key === 'postImage' && (
                       <div className="crop-guide-toggle-row" style={{ marginTop: '10px', padding: '6px 8px', backgroundColor: 'var(--badge-bg)', borderRadius: '6px' }}>
